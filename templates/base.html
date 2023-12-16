@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description goes here">
+    <meta name="author" content="Your Name">
+
+    <!-- Add your CSS stylesheets here -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Add your page title here -->
+    <title>{% block title %} {% endblock %}</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css/' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    {% include 'header.html' %}
+    </br>
+{% block content %} {% endblock %}
+    
+    <script> 
+        M.AutoInit();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script>$(document).ready(function(){
+        $(".owl-carousel").owlCarousel(
+            {% comment %} responsive : {
+                // breakpoint from 0 up
+                0 : {
+                    option1 : value,
+                    option2 : value,
+                    ...
+                },
+                // breakpoint from 480 up
+                480 : {
+                    option1 : value,
+                    option2 : value,
+                    ...
+                },
+                // breakpoint from 768 up
+                768 : {
+                    option1 : value,
+                    option2 : value,
+                    ...
+                }
+            } {% endcomment %}
+        );
+      });
+    </script>  
+    {% include 'footer.html' %}
+</body>
+</html>
